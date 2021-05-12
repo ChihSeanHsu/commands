@@ -8,10 +8,7 @@ if [ "$user" != 'root' ]; then
   elif command_exists su; then
     sh_c='su -c'
   else
-    cat >&2 <<-'EOF'
-    Error: this installer needs the ability to run commands as root.
-    We are unable to find either "sudo" or "su" available to make this happen.
-    EOF
+    cat "cannot run su can sudo"
     exit 1
   fi
 fi
